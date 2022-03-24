@@ -30,20 +30,20 @@
             <div class="col-md-4">
                 <div class="deposit stat">
                     <h5>Deposit</h5>
-                    <h2>$00</h2>
+                    <h2>$<span id="dollar">00</span></h2>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="withdraw stat">
                     <h5>Withdraw</h5>
-                    <h2>$00</h2>
+                    <h2>$<span id="withdraw_id">300</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="balance stat">
                     <h5>Balance </h5>
-                    <h2>$1250</h2>
+                    <h2>$<span id="bal">1200 </span></h2>
                 </div>
             </div>
         </div>
@@ -53,17 +53,17 @@
 
             <div class="col-md-6">
                 <div class="area">
-
                     <h3>Deposit</h3>
-                    <input type="text" name="" id=""><br>
-                    <button class="btn btn-success">Deposit</button>
+                    <input type="text" name="" id="depocal" class="form-control" placeholder="$you want to add"> <br>
+                    <button class="btn btn-success" id="add_deposit" style="margin-top: 20px;">Deposit</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="area">
                     <h3>Withdraw</h3>
-                    <input type="text" name="" id=""><br>
-                    <button class="btn btn-success">Withdraw</button>
+                    <input type="text" name="" id="withdraw_input" class="form-control"
+                        placeholder="$you want to withdraw"> <br>
+                    <button class="btn btn-success" id="count_withdraw" style="margin-top: 20px;">Withdraw</button>
                 </div>
             </div>
         </div>
@@ -77,6 +77,46 @@
             document.getElementById('replace-area').style.display = 'block';
 
         }
+
+        document.getElementById("add_deposit").addEventListener("click", depositCalculation)
+        function depositCalculation() {
+            const depo = document.getElementById("depocal").value;
+            const depos = parseFloat(depo);
+            const hasan = document.getElementById("dollar").innerText;
+            const adddollar = parseFloat(hasan);
+            const addnumber = depos + adddollar;
+            document.getElementById("dollar").innerText = addnumber;
+            const sumdepo = document.getElementById('bal').innerText;
+            const sumbal = parseFloat(sumdepo);
+            const addbal = sumbal + depos;
+            document.getElementById('bal').innerText = addbal;
+
+            document.getElementById("depocal").value = "";
+
+
+
+
+        }
+        document.getElementById('count_withdraw').addEventListener("click", takaWithdraw);
+        function takaWithdraw() {
+
+            const withdraw1 = document.getElementById("withdraw_input").value;
+            const withdraw2 = parseFloat(withdraw1);
+            const withdraw3 = document.getElementById('withdraw_id').innerText;
+            const withdraw4 = parseFloat(withdraw3);
+            const withdraw5 = withdraw4 - withdraw2;
+            document.getElementById('withdraw_id').innerText = withdraw5;
+
+
+            const withdrawu = document.getElementById('bal').innerText;
+            const withdrawv = parseFloat(withdrawu);
+            const withdraw6 = withdrawv - withdraw2;
+            document.getElementById('bal').innerText = withdraw6;
+            document.getElementById("withdraw_input").value = "";
+
+
+
+        } 
     </script>
 </body>
 
