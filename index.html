@@ -12,8 +12,72 @@
 </head>
 
 <body>
-    <h1 class="text-center">Welcome to Unique Bank.</h1>
+    <div class="container" id="log_id">
+        <h1 class="text-center">Welcome to Unique Bank.</h1>
+        <div class=" login-area">
 
+            <h1>Login</h1>
+
+            <input type="email" class="log form-control" placeholder="Email">
+            <input type="password" class="log form-control" placeholder="Password" style="margin-top: 13px;">
+            <button class="btn btn-success" id="log-id" style="margin-top: 10px;">Enter</button>
+
+        </div>
+
+    </div>
+    <div id="replace-area">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="deposit stat">
+                    <h5>Deposit</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="withdraw stat">
+                    <h5>Withdraw</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance stat">
+                    <h5>Balance </h5>
+                    <h2>$1250</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="area">
+
+                    <h3>Deposit</h3>
+                    <input type="text" name="" id=""><br>
+                    <button class="btn btn-success">Deposit</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="area">
+                    <h3>Withdraw</h3>
+                    <input type="text" name="" id=""><br>
+                    <button class="btn btn-success">Withdraw</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('log-id').addEventListener('click', logFun);
+        function logFun() {
+
+
+            document.getElementById('log_id').style.display = "none";
+            document.getElementById('replace-area').style.display = 'block';
+
+        }
+    </script>
 </body>
 
 </html>

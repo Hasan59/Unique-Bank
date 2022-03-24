@@ -1,3 +1,40 @@
 body{
     padding:100px;
 }
+.login-area{
+   
+    border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: 5px 5px 10px gray;
+    padding: 40px;
+}
+#replace-area{
+    display: none;
+   
+}
+.deposit{
+    background-color: slateblue;
+}
+.withdraw{
+    background-color: lightsalmon;
+}
+.balance{
+    background-color: orange;
+}
+.row{
+     margin: 50px;
+}
+.stat{
+    padding: 20px 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    color: white;
+
+}
+.area{
+    padding: 20px 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    color: white;
+
+}
