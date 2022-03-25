@@ -30,20 +30,20 @@
             <div class="col-md-4">
                 <div class="deposit stat">
                     <h5>Deposit</h5>
-                    <h2>$<span id="dollar">00</span></h2>
+                    <h2>$ <span id="dollar">00</span></h2>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="withdraw stat">
                     <h5>Withdraw</h5>
-                    <h2>$<span id="withdraw_id">300</span></h2>
+                    <h2>$ <span id="withdraw_id">300</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="balance stat">
                     <h5>Balance </h5>
-                    <h2>$<span id="bal">1200 </span></h2>
+                    <h2>$ <span id="bal">1200 </span></h2>
                 </div>
             </div>
         </div>
@@ -69,6 +69,7 @@
         </div>
     </div>
     <script>
+
         document.getElementById('log-id').addEventListener('click', logFun);
         function logFun() {
 
@@ -82,41 +83,70 @@
         function depositCalculation() {
             const depo = document.getElementById("depocal").value;
             const depos = parseFloat(depo);
-            const hasan = document.getElementById("dollar").innerText;
-            const adddollar = parseFloat(hasan);
-            const addnumber = depos + adddollar;
-            document.getElementById("dollar").innerText = addnumber;
-            const sumdepo = document.getElementById('bal').innerText;
-            const sumbal = parseFloat(sumdepo);
-            const addbal = sumbal + depos;
-            document.getElementById('bal').innerText = addbal;
+            // const hasan = document.getElementById("dollar").innerText;
+            // const adddollar = parseFloat(hasan);
+            // const addnumber = depos + adddollar;
+            // document.getElementById("dollar").innerText = addnumber;
+            // const sumdepo = document.getElementById('bal').innerText;
+            // const sumbal = parseFloat(sumdepo);
+            // const addbal = sumbal + depos;
+            // document.getElementById('bal').innerText = addbal;
+            spanText("dollar", depos);
+            spanText("bal", depos);
 
             document.getElementById("depocal").value = "";
-
-
+        }
+        function spanText(id, depos) {
+            const adddollar = document.getElementById(id).innerText;
+            const addnumber = parseFloat(adddollar);
+            const addf = addnumber + depos;
+            document.getElementById(id).innerText = addf;
 
 
         }
+
+
+
         document.getElementById('count_withdraw').addEventListener("click", takaWithdraw);
         function takaWithdraw() {
 
             const withdraw1 = document.getElementById("withdraw_input").value;
             const withdraw2 = parseFloat(withdraw1);
-            const withdraw3 = document.getElementById('withdraw_id').innerText;
-            const withdraw4 = parseFloat(withdraw3);
-            const withdraw5 = withdraw4 - withdraw2;
-            document.getElementById('withdraw_id').innerText = withdraw5;
+            // const withdraw3 = document.getElementById('withdraw_id').innerText;
+            // const withdraw4 = parseFloat(withdraw3);
+            // const withdraw5 = withdraw4 - withdraw2;
+            // document.getElementById('withdraw_id').innerText = withdraw5;
 
 
-            const withdrawu = document.getElementById('bal').innerText;
-            const withdrawv = parseFloat(withdrawu);
-            const withdraw6 = withdrawv - withdraw2;
-            document.getElementById('bal').innerText = withdraw6;
+            // const withdrawu = document.getElementById('bal').innerText;
+            // const withdrawv = parseFloat(withdrawu);
+            // const withdraw6 = withdrawv - withdraw2;
+            // document.getElementById('bal').innerText = withdraw6;
+
+
+
+            const you = delBalance("withdraw_id");
+            const withdraww = you + withdraw2;
+            document.getElementById("withdraw_id").innerText = withdraww;
+
+            const your = delBalance("bal");
+            const withdraw5 = your - withdraw2;
+            document.getElementById("bal").innerText = withdraw5;
             document.getElementById("withdraw_input").value = "";
 
 
 
-        } 
+
+
+            function delBalance(id) {
+
+                const withdraw3 = document.getElementById(id).innerText;
+                const withdraw4 = parseFloat(withdraw3);
+                return withdraw4;
+                // const withdraw5 = withdraw4 - withdraw2;
+                // document.getElementById(id).innerText = withdraw5;
+            }
+        }
     </script>
 </body>
 
